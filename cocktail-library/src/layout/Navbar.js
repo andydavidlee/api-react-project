@@ -1,19 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FaCocktail } from 'react-icons/fa';
 import PropTypes from 'prop-types'
 
-class Navbar extends Component {
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-    }
-    render() {
+const Navbar = ({icon, title}) => {
+  
         return (
-            <nav className="navbar bg-primary">
-                <FaCocktail />
-                <h1>{this.props.title}</h1>
+            <nav className="navbar bg-dark">
+                <div className="navbar-brand x-large">{icon}</div>
+                <h1>{title}</h1>
             </nav>
         )
-    }
+}
+
+Navbar.defaultProps = {
+    title: 'Navbar',
+    icon: <FaCocktail />
+}
+
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
 }
 
 export default Navbar

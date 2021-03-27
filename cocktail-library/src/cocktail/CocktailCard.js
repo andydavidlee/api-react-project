@@ -1,22 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-class CocktailCard extends Component {
-    state = {
-        id: 1,
-        strDrink: 'GG',
-        strDrinkThumb:"https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg"
 
-    }
-    render() {
-        const {strDrink, strDrinkThumb} = this.state;
+const CocktailCard= ({cocktail: {strDrink, strDrinkThumb}}) => {
         return (
             <div className='card text-center'>
-                <img style={{width: '300px'}} src={strDrinkThumb} alt="avartar"/>
+                <img style={{width: '300px'}} src={strDrinkThumb} alt="avatar"/>
                 <h2>{strDrink}</h2>
-                <a href="www.face.com" className='btn btn-dark btn-sm my-1'>Method</a>
+                {/* <a href="www.face.com" className='btn btn-dark btn-sm my-1'>Method</a> */}
             </div>
         )
-    }
+}
+
+CocktailCard.propTypes = {
+    cocktail: PropTypes.object.isRequired,
 }
 
 export default CocktailCard
