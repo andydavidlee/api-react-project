@@ -1,3 +1,5 @@
+// Function component that lays the cockatail grid out on the home page
+
 import React from 'react';
 import CocktailCard from './CocktailCard';
 import Spinner from '../layout/Spinner';

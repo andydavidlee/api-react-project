@@ -1,3 +1,5 @@
+// About page
+
 import React, { Fragment } from 'react'
 
 const About = () => {

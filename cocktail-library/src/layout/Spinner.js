@@ -1,3 +1,5 @@
+// Function based component for the spinner gif to show until the api is loaded.
+
 import React from 'react'
 import spinner from './spinner.gif'
 

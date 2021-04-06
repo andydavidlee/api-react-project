@@ -1,3 +1,5 @@
+// main app component where all components are passed through
+
 import { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';

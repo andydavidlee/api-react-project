@@ -1,3 +1,5 @@
+// Class based component returns the individual recipe of a cocktail.
+
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 

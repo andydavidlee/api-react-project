@@ -1,3 +1,5 @@
+// Class based component to search for looking up cocktails within the api
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 

@@ -1,3 +1,5 @@
+// Function based component which is the layout of the individual cockatail cards for the grid
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'

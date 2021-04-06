@@ -1,3 +1,5 @@
+// Function based component to alert users to type in the search component
+
 import React from 'react'
 import { FaExclamationCircle } from 'react-icons/fa'
 

@@ -1,3 +1,5 @@
+// Function based component for the Navigation
+
 import React from 'react';
 import { FaCocktail } from 'react-icons/fa';
 import PropTypes from 'prop-types';
