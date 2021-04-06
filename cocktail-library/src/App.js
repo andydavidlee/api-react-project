@@ -1,5 +1,5 @@
 // main app component where all components are passed through
-
+// Imported modules and components
 import { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
@@ -10,6 +10,7 @@ import Search from './cocktail/Search';
 import Alert from './layout/Alert';
 import About from './pages/About';
 import CocktailRecipe from './cocktail/CocktailRecipe';
+
 
 class App extends Component {
  
@@ -48,7 +49,7 @@ class App extends Component {
     try {
     const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
     // console.log(res.data.drinks);
-    this.setState({cocktailrecipe: res.data.drinks, loading: false})
+    this.setState({cocktailrecipe: res.data, loading: false})
   } catch(error) {
     console.log(error)
   }
