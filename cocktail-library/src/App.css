@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 /* Global Styles */
 :root {
   --primary-color: #dc3545;
-  --dark-color: #333333;
+  --dark-color: #000;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -16,7 +16,8 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Questrial', sans-serif;  font-weight: 700;
+  font-style: normal;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -110,10 +111,80 @@ img {
 }
 
 /* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
 .card {
-  padding: 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+
+  perspective: 1000px;
+}
+
+.card h1 {
+  font-family: brandon-grotesque,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* List */
@@ -145,7 +216,7 @@ img {
   padding: 1rem 0;
 }
 .py-2 {
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 .py-3 {
   padding: 3rem 0;
@@ -347,19 +418,35 @@ table th {
 }
 
 /* Navbar */
+
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 2rem 2rem;
   z-index: 1;
   width: 100%;
-  opacity: 0.9;
   margin-bottom: 1rem;
+}
+.navbar h1 {
+  font-family: 'Questrial', sans-serif;  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 15px;
+  float: none;
+  position: absolute;
+  padding-top: 5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+.navbar-brand {
+  margin-left: 5%;
 }
 
 .navbar ul {
   display: flex;
+  position: absolute;
+  right: 0;
+  padding-top: 2rem;
+  margin-right: 5%;
 }
 
 .navbar a {
@@ -370,10 +457,6 @@ table th {
 
 .navbar a:hover {
   color: var(--light-color);
-}
-
-.navbar .welcome span {
-  margin-right: 0.6rem;
 }
 
 /* Mobile Styles */
@@ -403,7 +486,7 @@ table th {
 
   /* Navbar */
   .navbar {
-    display: block;
+    display: flex;
     text-align: center;
   }
 
