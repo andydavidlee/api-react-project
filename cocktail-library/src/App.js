@@ -1,4 +1,5 @@
 // main app component where all components are passed through
+
 // Imported modules and components
 import { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -22,6 +23,7 @@ class App extends Component {
     type:''
   }
 
+  // Calling the API and putting the information into the state
   async componentDidMount() {
     try {
       this.setState({loading: true})
@@ -34,6 +36,7 @@ class App extends Component {
     
   }
 
+  // Calling certain items from the API based on the name of the cocktail
   handleSearchCocktails= async (text) => {
     try{
     const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}`);
@@ -44,21 +47,24 @@ class App extends Component {
   }
   }
 
-  // Get cocktail recipe
+  // Get single cocktail recipe
   getCocktail = async (idDrink) => {
     try {
     const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
     // console.log(res.data.drinks);
     this.setState({cocktailrecipe: res.data, loading: false})
+    // console.log(this.state.cocktailrecipe);
   } catch(error) {
     console.log(error)
   }
   }
 
+  // clears the search bar once a query has been made
   handleClearCocktails= () => {
     this.setState({cocktails:[], loading: false})
   }
 
+  // An alert message if the search bar is empty
   handleSetAlert=(msgfromSearch, typefromSearch)=>{
     this.setState({ msg:msgfromSearch, type:typefromSearch })
     setTimeout(()=>this.setState({msg:'', type:''}), 5000)
@@ -67,6 +73,7 @@ class App extends Component {
   render() {
     const {cocktails, loading, cocktailrecipe} = this.state;
     return (
+      // Routes and components
       <Router>
         <div className="App">
           <Navbar title="COCKTAIL LIBRARY" />

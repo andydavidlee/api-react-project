@@ -15,7 +15,7 @@ const CocktailCard= ({cocktail: {strDrink, strDrinkThumb, idDrink}}) => {
                     <div className="card-back py-2">
                         <h2>{strDrink}</h2>
                         <p className="py-1">Get ready to wow the crowd at your next cocktail party.</p>
-                        <Link to={`/cocktailRecipe/${idDrink}`} className='btn btn-light btn-sm py-1'>Method</Link>
+                        <Link to={`/cocktailRecipe/${idDrink}`} className='btn btn-light btn-sm py-1'>View Recipe</Link>
                     </div>
                 </div>
             </div>
