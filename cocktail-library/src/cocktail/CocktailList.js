@@ -10,7 +10,7 @@ const CocktailList = ({ cocktails, loading }) => {
             return <Spinner />
         }else{
             return (
-                <div className="cards">
+                <div className="cards py-1">
                     {cocktails.map(cocktail => (
                         <CocktailCard key={cocktail.id} cocktail={cocktail} />
                     ))}
