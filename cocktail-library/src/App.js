@@ -28,7 +28,6 @@ class App extends Component {
     try {
       this.setState({loading: true})
     const res = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=');
-    // console.log(res.data);
     this.setState({cocktails: res.data.drinks, loading: false})
     } catch(error) {
       console.log(error)
@@ -40,7 +39,6 @@ class App extends Component {
   handleSearchCocktails= async (text) => {
     try{
     const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}`);
-    // console.log(res.data);
     this.setState({cocktails: res.data.drinks, loading: false})
   } catch(error) {
     console.log(error)
@@ -51,9 +49,7 @@ class App extends Component {
   getCocktail = async (idDrink) => {
     try {
     const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`);
-    // console.log(res.data.drinks);
     this.setState({cocktailrecipe: res.data, loading: false})
-    // console.log(this.state.cocktailrecipe);
   } catch(error) {
     console.log(error)
   }

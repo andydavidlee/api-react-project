@@ -18,7 +18,6 @@ class Search extends Component {
     }
     handleSubmit= (e) => {
         e.preventDefault();
-        // console.log(this.state.text);
         if (this.state.text===''){
             this.props.setAlert('Please enter something', 'secondary')
         }else{

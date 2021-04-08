@@ -10,7 +10,6 @@ class CocktailRecipe extends Component {
     // loads the props that matches the id
     componentDidMount(){
         this.props.getCocktail(this.props.match.params.idDrink);
-        // console.log(this.props)
     }
     static propTypes = {
         getCocktail: PropTypes.func.isRequired,
